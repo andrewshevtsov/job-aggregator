@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ListItem from './ListItem';
 import axios from 'axios';
 
 class App extends Component {
@@ -33,7 +34,7 @@ class App extends Component {
         </p>
           <div>
               {this.state.data.items.map( (item) => {
-                  return <h1 key={item.id}>{item.name}</h1>
+                  return <ListItem key={item.id} {...item}/>
               } )}
           </div>
          {/*<h1>{JSON.stringify(this.state)}</h1>*/}
