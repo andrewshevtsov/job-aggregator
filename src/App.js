@@ -9,12 +9,13 @@ class App extends Component {
     state = {}
 
     componentDidMount() {
-        axios.get('https://api.hh.ru/vacancies').then((result) => {
-            this.setState({data: result.data})
-        }).catch((err) => {
-            console.error(err);
-            alert('something wrong')
-        })
+        axios.get('https://api.hh.ru/vacancies')
+            .then((result) => {
+                this.setState({data: result.data})
+            }).catch((err) => {
+                console.error(err);
+                alert('something wrong')
+            })
     }
 
   render() {
@@ -37,7 +38,6 @@ class App extends Component {
                   return <ListItem key={item.id} {...item}/>
               } )}
           </div>
-         {/*<h1>{JSON.stringify(this.state)}</h1>*/}
       </div>
     );
   }
