@@ -24,15 +24,11 @@ class App extends Component {
         if (scrollDiv.scrollHeight <= scrollDiv.clientHeight + scrollDiv.scrollTop + 20) {
             this.getDataFromAPI()
         }
-
     }
 
     getDataFromAPI = () => {
-
         if(!this.state.isListLoading) {
-
             this.setState({isListLoading: true})
-
             fetch(`https://api.hh.ru/vacancies?page=${this.page}&per_page=50`)
                 .then(res => res.json())
                 .then((result) => {
@@ -55,11 +51,9 @@ class App extends Component {
     }
 
   render() {
-
       if (!this.state.data) {
           return <h1>Данных еще нет, загружаем...</h1>
       }
-
     return (
       <div className="App">
         <header className="App-header">
