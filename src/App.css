@@ -21,22 +21,31 @@
   font-size: large;
 }
 
+.list_container {
+  width: 100%;
+}
+
 .list_wrapper {
-  height: 500px;
-  overflow: auto;
-  border: 1px solid black;
+  width: 1200px;
+  margin: 0 auto;
+  height: 800px;
+  overflow-y: auto;
 }
 
 .cardItemVacancies {
     border: 1px solid black;
     border-radius: 10px;
-    width: 65em;
-    padding: 0px 0 0 0;
-    margin: 10px 0px 0px 0;
+    width: 40em;
+    padding: 0;
+    margin: 10px auto 0px auto;
     text-align: center;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.vacanci-text {
+  font-weight: bold;
 }

@@ -69,10 +69,12 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-          <div className={'list_wrapper'} onScroll={this.onListScroll}>
-              {this.state.data.items.map( (item) => {
-                  return <ListItem key={item.id} {...item}/>
-              } )}
+          <div className="list_container">
+              <div className={'list_wrapper'} onScroll={this.onListScroll}>
+                  {this.state.data.items.map( (item) => {
+                      return <ListItem key={item.id} {...item}/>
+                  } )}
+              </div>
           </div>
       </div>
     );
