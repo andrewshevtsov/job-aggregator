@@ -11,14 +11,14 @@
   background-color: #222;
   height: 127px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .App-title {
   font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
 }
 
 .list_container {
@@ -26,24 +26,20 @@
 }
 
 .list_wrapper {
-  width: 1200px;
   margin: 0 auto;
   height: 800px;
   overflow-y: auto;
+  width: 40%;
 }
 
 .cardItemVacancies {
-    border: 1px solid black;
+    border: 1px dashed black;
     border-radius: 10px;
-    width: 40em;
+    width: 600px;
     padding: 0;
     margin: 10px auto 0px auto;
     text-align: center;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    background: #f3f3f3;
 }
 
 .vacanci-text {
