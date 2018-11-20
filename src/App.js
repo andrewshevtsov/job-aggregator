@@ -12,63 +12,65 @@ class App extends Component {
         isListLoading: false
     }
 
-    page = 0
+    page = 0;
 
     onListScroll = (e) => {
-        const scrollDiv = e.currentTarget
-        console.log(`scrollDiv.clientHeight:${scrollDiv.clientHeight}
-                     scrollDiv.scrollHeight:${scrollDiv.scrollHeight}
-                     scrollDiv.scrollTop:${scrollDiv.scrollTop}
-                     scrollDiv.clientHeight + scrollDiv.scrollTop:${scrollDiv.clientHeight + scrollDiv.scrollTop}`)
+        const SCROLLDIV = e.currentTarget;
+        console.log(`
+                Высота блока:${SCROLLDIV.clientHeight}
+                Высота контента:${SCROLLDIV.scrollHeight}
+                Насколько юзер проскроллил:${SCROLLDIV.scrollTop}
+                Высота блока + насколько юзер проскроллил:${SCROLLDIV.clientHeight + SCROLLDIV.scrollTop}
+                Сделать запрос, когда второе и четвёртое значения будут равны
+            `);
 
-        if (scrollDiv.scrollHeight <= scrollDiv.clientHeight + scrollDiv.scrollTop + 20) {
-            this.getDataFromAPI()
+        if (SCROLLDIV.scrollHeight <= SCROLLDIV.clientHeight + SCROLLDIV.scrollTop + 20) {
+            this.getDataFromAPI();
         }
     }
 
     getDataFromAPI = () => {
-        if(!this.state.isListLoading) {
-            this.setState({isListLoading: true})
-            fetch(`https://api.hh.ru/vacancies?page=${this.page}&per_page=50`)
+        if (!this.state.isListLoading) {
+            this.setState({isListLoading: true});
+            fetch( `https://api.hh.ru/vacancies?page=${this.page}&per_page=50` )
                 .then(res => res.json())
                 .then((result) => {
-                    console.log(result)
+                    console.log(result);
                     this.setState({data: {
                         items: this.state.data.items.concat(result.items)}
-                      })
+                    })
                     this.setState({isListLoading: false})
-                this.page++
+                this.page++;
             }).catch((err) => {
-                this.setState({isListLoading: false})
-                console.error(err);
-                alert('something wrong')
+                    console.error(err);
+                    alert('something wrong');
                 })
             }
         }
 
     componentDidMount() {
-        this.getDataFromAPI()
+        this.getDataFromAPI();
     }
 
-  render() {
-      if (!this.state.data) {
-          return <h1>Данных еще нет, загружаем...</h1>
-      }
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">React sample job parser</h1>
-        </header>
-          <div className="list_container">
-              <div className={'list_wrapper'} onScroll={this.onListScroll}>
-                  {this.state.data.items.map( (item) => {
-                      return <ListItem key={item.id} {...item}/>
-                  } )}
-              </div>
-          </div>
-      </div>
-    );
-  }
+    render() {
+        if (!this.state.data) {
+            return <h1>Данных еще нет, загружаем...</h1>
+        }
+        return (
+        <div className="App">
+            <header className="App-header">
+                <h1 className="App-title">React sample job parser</h1>
+            </header>
+            <div className="list_container">
+                <div className={'list_wrapper'} onScroll={this.onListScroll}>
+                    {this.state.data.items.map( (item) => {
+                        return <ListItem key={item.id} {...item}/>
+                    } )}
+                </div>
+            </div>
+        </div>
+        );
+    }
 }
 
 export default App;
