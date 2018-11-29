@@ -41,13 +41,9 @@
   margin: 10px auto 0px auto;
   text-align: center;
   background: #f3f3f3;
-  display: flex;
-  justify-content: space-around;
 }
 
 .cardItemVacancies p {
-  display: flex;
-  flex-direction: column;
   font-size: 14px;
   padding: 5px 30px;
 }
