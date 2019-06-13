@@ -26,30 +26,25 @@
 }
 
 .list_wrapper {
-  margin: 0 auto;
-  height: 800px;
+  display: flex;
+  flex-flow: row wrap;
+  height: calc(100vh - 160px);
   overflow-y: auto;
-  width: 75%;
-  padding: 0 15px;
+  width: 100%;
 }
 
 .cardItemVacancies {
   border: 1px dashed black;
   border-radius: 10px;
-  width: 100%;
-  padding: 0;
-  margin: 10px auto 0px auto;
+  width: 23.5%;
+  margin: 10px;
   text-align: center;
   background: #f3f3f3;
 }
 
-.cardItemVacancies p {
+.cardItemVacancies div {
   font-size: 14px;
-  padding: 5px 30px;
-}
-
-.cardItemVacancies p:not(:last-child) {
-  border-right: 1px solid gray;
+  padding: 5px;
 }
 
 .vacancy-text {
