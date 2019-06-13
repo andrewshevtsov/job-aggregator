@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ListItem = (props) => {
-
-    return <div className={'cardItemVacancies'}>
+    return (
+        <div className={'cardItemVacancies'}>
             <div className={'vacancy-inner'}>
                 <div className={'employer-logo'}>
                     {props.employer.logo_urls ? <img src={props.employer.logo_urls[90]} alt={"Company Logo"} /> : 'No logo'}
@@ -24,6 +24,7 @@ const ListItem = (props) => {
                 </div>
             </div>
         </div>
+    );
 }
 
 export default ListItem;
