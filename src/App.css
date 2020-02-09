@@ -9,7 +9,6 @@
 
 .App-header {
   background-color: #222;
-  height: 127px;
   color: white;
   display: flex;
   justify-content: center;
@@ -29,7 +28,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 93px);
   overflow-y: auto;
   width: 100%;
 }

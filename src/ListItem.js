@@ -22,6 +22,9 @@ const ListItem = (props) => {
                 <div className={'vacancy-city'}>
                     Город: {props.address && props.address.city ? props.address.city : '---'}
                 </div>
+                <div className={'vacancy-link'}>
+                    <a href={props.alternate_url}>Ссылка на вакансию</a>
+                </div>
             </div>
         </div>
     );
